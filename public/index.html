@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kleinunternehmer-Check 2026: 25.000 € und 100.000 € Grenze</title>
+<meta name="description" content="Prüfen Sie die Kleinunternehmer-Grenzen nach § 19 UStG (25.000 € Vorjahr, 100.000 € laufendes Jahr), tragen Sie Ihren Umsatz pro Monat ein und lassen Sie sich vor der Grenze warnen.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B0F0C">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="app.css?v=3">
+</head>
+<body>
+
+<nav class="strip" aria-label="Site">
+  <div class="wrap strip__in">
+    <a class="strip__home" id="lnkHome" href="/de/tools/kleinunternehmer-check/">&larr; hmsk.life</a>
+    <span class="strip__sp"></span>
+    <a id="lnkImprint" href="/impressum/">Impressum</a>
+    <a id="lnkPrivacy" href="/datenschutz/">Datenschutz</a>
+    <span class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="de" aria-pressed="true">DE</button><button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </span>
+  </div>
+</nav>
+
+<main class="wrap main">
+  <header class="head">
+    <p class="cmd"><span class="ps">$</span> <span data-i18n="cmd">kleinunternehmer --check</span></p>
+    <h1 data-i18n="h1">Bin ich noch Kleinunternehmer?</h1>
+    <p class="lead" data-i18n="lead"></p>
+  </header>
+
+  <div class="grid">
+    <form class="panel qs" id="questions" autocomplete="off" onsubmit="return false" novalidate>
+      <fieldset class="q">
+        <legend><span class="flag">--year</span> <span data-i18n="q_year">Für welches Jahr?</span></legend>
+        <div class="opts" id="yearOpts"></div>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend><span class="flag">--started</span> <span data-i18n-y="q_started"></span></legend>
+        <p class="hint" data-i18n="h_started"></p>
+        <div class="opts">
+          <label><input type="radio" name="started" value="y"><span data-i18n="yes">Ja</span></label>
+          <label><input type="radio" name="started" value="n"><span data-i18n="no">Nein</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q" id="prevQ" hidden>
+        <legend><span class="flag" id="prevFlag">--turnover-prev</span> <label for="prev" data-i18n-y="q_prev"></label></legend>
+        <p class="hint" data-i18n="h_prev"></p>
+        <div class="money"><input class="amt" type="text" id="prev" name="prev" inputmode="decimal" placeholder="0" aria-describedby="prevErr"><span class="eur">€</span></div>
+        <p class="err" id="prevErr" hidden></p>
+        <button type="button" class="linkish" id="usePrev" hidden></button>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend><span class="flag">--monthly</span> <span data-i18n-y="q_months"></span></legend>
+        <p class="hint" data-i18n="h_months"></p>
+        <table class="months">
+          <thead><tr><th scope="col" data-i18n="col_month">Monat</th><th scope="col" data-i18n="col_amount">Eingang</th><th scope="col" class="num" data-i18n="col_sum">Summe</th></tr></thead>
+          <tbody id="monthRows"></tbody>
+          <tfoot><tr><th scope="row" data-i18n-y="total"></th><td></td><td class="num" id="monthTotal">0</td></tr></tfoot>
+        </table>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend><span class="flag">--next-order</span> <label for="plan" data-i18n="q_plan"></label></legend>
+        <p class="hint" data-i18n="h_plan"></p>
+        <div class="money"><input class="amt" type="text" id="plan" name="plan" inputmode="decimal" placeholder="0"><span class="eur">€</span></div>
+        <p class="err" id="planErr" hidden></p>
+      </fieldset>
+
+      <p class="qs__foot"><span class="dim small" data-i18n="saved"></span> <button type="button" class="linkish" id="clearBtn" data-i18n="clear"></button></p>
+    </form>
+
+    <section class="panel result" id="result" aria-live="polite">
+      <p class="result__title"><span class="ps">&gt;</span> <span data-i18n="result">Ihr Ergebnis</span></p>
+      <div id="resultBody"></div>
+    </section>
+  </div>
+
+  <section class="lose" id="lose">
+    <p class="cmd"><span class="ps">$</span> <span data-i18n="lose_cmd"></span></p>
+    <h2 class="h2 h2--big" data-i18n="lose_h"></h2>
+    <ul class="todo" id="loseList"></ul>
+  </section>
+
+  <section class="sources">
+    <p class="cmd"><span class="ps">$</span> <span data-i18n="sources_cmd">cat quellen.txt</span></p>
+    <ul id="sourcesList"></ul>
+    <p class="asof" data-i18n="asof"></p>
+    <p class="note" data-i18n="note"></p>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p data-i18n="privacy_line"></p>
+</footer>
+
+<script src="config.js"></script>
+<script src="logic.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
