@@ -87,7 +87,7 @@ window.KUC_I18N = {
     home_href: '/de/tools/kleinunternehmer-check/',
     invoice_href: '/de/tools/invoice/?utm_source=kleinunternehmer-check&utm_medium=result&utm_campaign=kleinunternehmer-check-invoice',
     einv_href: '/de/tools/e-invoice-deadline/',
-    contact_href: '/de/?topic=kleinunternehmer-check#contact',
+    contact_href: '/de/newsletter/?topic=kleinunternehmer-check',
     src: [
       ['§ 19 UStG: Steuerbefreiung für Kleinunternehmer', 'https://www.gesetze-im-internet.de/ustg_1980/__19.html'],
       ['BMF-Schreiben vom 18. März 2025: Sonderregelung für Kleinunternehmer (Abschnitte 14.7a, 19.1, 19.2, 19.7 UStAE)', 'https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2025-03-18-sonderregelung-kleinunternehmer.pdf?__blob=publicationFile&v=3'],
@@ -182,7 +182,7 @@ window.KUC_I18N = {
     home_href: '/tools/kleinunternehmer-check/',
     invoice_href: '/tools/invoice/?utm_source=kleinunternehmer-check&utm_medium=result&utm_campaign=kleinunternehmer-check-invoice',
     einv_href: '/tools/e-invoice-deadline/',
-    contact_href: '/?topic=kleinunternehmer-check#contact',
+    contact_href: '/subscribe/?topic=kleinunternehmer-check',
     src: [
       ['§ 19 UStG: small business exemption (German law text)', 'https://www.gesetze-im-internet.de/ustg_1980/__19.html'],
       ['BMF letter of 18 March 2025 on the new small business rules (sections 14.7a, 19.1, 19.2, 19.7 UStAE)', 'https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2025-03-18-sonderregelung-kleinunternehmer.pdf?__blob=publicationFile&v=3'],
