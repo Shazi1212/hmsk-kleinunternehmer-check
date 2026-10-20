@@ -4,7 +4,7 @@ window.KUC_I18N = {
   de: {
     locale: 'de-DE',
     title: 'Kleinunternehmer-Check 2026: 25.000 € und 100.000 € Grenze',
-    cmd: 'kleinunternehmer --check',
+    cmd: 'Kleinunternehmer-Check',
     h1: 'Bin ich noch Kleinunternehmer?',
     lead: 'Prüfen Sie die Grenzen nach § 19 UStG (seit 2025: 25.000 € im Vorjahr, 100.000 € im laufenden Jahr) und tragen Sie Ihren Umsatz pro Monat ein. Der Check warnt Sie, bevor Sie die Grenze überschreiten.',
     q_year: 'Für welches Jahr?',
@@ -66,7 +66,7 @@ window.KUC_I18N = {
     mail_d: 'wenn sich die Grenzen ändern oder dieser Check neue Funktionen bekommt.',
     print: 'Drucken',
 
-    lose_cmd: 'cat wenn-der-status-weg-ist.txt',
+    lose_cmd: 'Ohne Kleinunternehmerregelung',
     lose_h: 'Was sich ändert, wenn Sie kein Kleinunternehmer mehr sind',
     lose: [
       'Ab dem Umsatz, der die Grenze überschreitet: Umsatzsteuer berechnen, meist 19 %, für manche Leistungen 7 %. Auch Zahlungen, die später für frühere Aufträge eingehen, sind dann steuerpflichtig.',
@@ -79,7 +79,7 @@ window.KUC_I18N = {
       'Zurück zur Kleinunternehmerregelung: frühestens in einem Jahr, dessen Vorjahresumsatz höchstens 25.000 € betrug. Sprechen Sie mit Ihrer Steuerberatung.',
     ],
 
-    sources_cmd: 'cat quellen.txt',
+    sources_cmd: 'Quellen',
     asof: 'Stand: 19. Oktober 2026. Grenzen gelten seit 1. Januar 2025 (Jahressteuergesetz 2024).',
     note: 'Keine Steuerberatung. Der Check fasst § 19 UStG und das BMF-Schreiben vom 18. März 2025 zusammen. Sonderfälle (z. B. Umsätze im EU-Ausland nach § 19a UStG, Differenzbesteuerung, steuerfreie Umsätze) prüft er nicht. Fragen Sie Ihre Steuerberatung, bevor Sie sich darauf verlassen.',
     privacy_line: 'Läuft in Ihrem Browser. Keine Cookies, kein Tracking. Ihre Zahlen werden nur in diesem Browser gespeichert (localStorage) und nie an einen Server gesendet.',
@@ -99,7 +99,7 @@ window.KUC_I18N = {
   en: {
     locale: 'en-GB',
     title: 'Kleinunternehmer check 2026: the €25,000 and €100,000 limits',
-    cmd: 'kleinunternehmer --check',
+    cmd: 'Kleinunternehmer-Check',
     h1: 'Am I still a Kleinunternehmer?',
     lead: 'Check the German small business limits under § 19 UStG (since 2025: €25,000 in the previous year, €100,000 in the current year) and track your turnover month by month. The check warns you before you cross the line.',
     q_year: 'Which year?',
@@ -161,7 +161,7 @@ window.KUC_I18N = {
     mail_d: 'when the limits change or this check gets new features.',
     print: 'Print',
 
-    lose_cmd: 'cat if-you-lose-it.txt',
+    lose_cmd: 'Without the small business rule',
     lose_h: 'What changes when you are no longer a Kleinunternehmer',
     lose: [
       'From the payment that crosses the limit: charge VAT, usually 19%, 7% for some goods and services. Payments that come in later for earlier work are taxable too.',
@@ -174,7 +174,7 @@ window.KUC_I18N = {
       'Back to the Kleinunternehmer rule: at the earliest in a year whose previous year stayed at or below €25,000. Talk to your tax advisor.',
     ],
 
-    sources_cmd: 'cat sources.txt',
+    sources_cmd: 'Sources',
     asof: 'As of 19 October 2026. The limits apply since 1 January 2025 (Jahressteuergesetz 2024).',
     note: 'Not tax advice. This check summarises § 19 UStG and the BMF letter of 18 March 2025. It does not cover special cases (for example turnover in other EU countries under § 19a UStG, margin schemes, VAT-exempt turnover). Ask your tax advisor before you rely on it.',
     privacy_line: 'Runs in your browser. No cookies, no tracking. Your numbers are stored only in this browser (localStorage) and never sent to a server.',

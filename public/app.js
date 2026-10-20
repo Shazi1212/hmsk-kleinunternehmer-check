@@ -208,12 +208,12 @@
       if (p.crosses) msg = t('plan_cross', { a: eur(p.after), b: eur(p.vatOnTop), c: eur(p.vatInside) }) + ' ' + t('plan_cross_7');
       else if (p.crossesNext) msg = t('plan_next', vars);
       else msg = t('plan_fits', { a: eur(p.after), b: eur(r.limit - p.after) });
-      html.push('<p class="plan' + (p.crosses ? ' plan--cross' : '') + '"><span class="flag">--next-order ' + esc(eur(p.amount)) + '</span>' + esc(msg) + '</p>');
+      html.push('<p class="plan' + (p.crosses ? ' plan--cross' : '') + '"><span class="plan__amt">' + esc(eur(p.amount)) + '</span>' + esc(msg) + '</p>');
     }
 
     // invoice text
     var eligible = r.status === 'ok' || r.status === 'near' || r.status === 'close';
-    html.push('<h2 class="h2"><span class="ps">#</span> ' + esc(t('inv_title')) + '</h2>');
+    html.push('<h2 class="h2">' + esc(t('inv_title')) + '</h2>');
     if (eligible) {
       html.push('<p class="small">' + esc(t('inv_desc')) + '</p>' +
         copyBox('inv_de', t('inv_de')) + copyBox('inv_en', t('inv_en')) +

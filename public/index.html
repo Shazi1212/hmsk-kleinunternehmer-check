@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kleinunternehmer-Check 2026: 25.000 € und 100.000 € Grenze</title>
 <meta name="description" content="Prüfen Sie die Kleinunternehmer-Grenzen nach § 19 UStG (25.000 € Vorjahr, 100.000 € laufendes Jahr), tragen Sie Ihren Umsatz pro Monat ein und lassen Sie sich vor der Grenze warnen.">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0B0F0C">
+<meta name="theme-color" content="#EFF1F2">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="app.css?v=3">
+<link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="letterpress.css?v=2">
+<link rel="stylesheet" href="app.css?v=4">
 </head>
 <body>
 
@@ -26,7 +27,7 @@
 
 <main class="wrap main">
   <header class="head">
-    <p class="cmd"><span class="ps">$</span> <span data-i18n="cmd">kleinunternehmer --check</span></p>
+    <p class="eyebrow"><span data-i18n="cmd">Kleinunternehmer-Check</span></p>
     <h1 data-i18n="h1">Bin ich noch Kleinunternehmer?</h1>
     <p class="lead" data-i18n="lead"></p>
   </header>
@@ -76,19 +77,19 @@
     </form>
 
     <section class="panel result" id="result" aria-live="polite">
-      <p class="result__title"><span class="ps">&gt;</span> <span data-i18n="result">Ihr Ergebnis</span></p>
+      <p class="result__title"><span data-i18n="result">Ihr Ergebnis</span></p>
       <div id="resultBody"></div>
     </section>
   </div>
 
   <section class="lose" id="lose">
-    <p class="cmd"><span class="ps">$</span> <span data-i18n="lose_cmd"></span></p>
+    <p class="cmd"><span data-i18n="lose_cmd"></span></p>
     <h2 class="h2 h2--big" data-i18n="lose_h"></h2>
     <ul class="todo" id="loseList"></ul>
   </section>
 
   <section class="sources">
-    <p class="cmd"><span class="ps">$</span> <span data-i18n="sources_cmd">cat quellen.txt</span></p>
+    <p class="cmd"><span data-i18n="sources_cmd">Quellen</span></p>
     <ul id="sourcesList"></ul>
     <p class="asof" data-i18n="asof"></p>
     <p class="note" data-i18n="note"></p>
@@ -101,7 +102,7 @@
 
 <script src="config.js"></script>
 <script src="logic.js"></script>
-<script src="i18n.js"></script>
-<script src="app.js"></script>
+<script src="i18n.js?v=4"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
