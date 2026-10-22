@@ -231,15 +231,28 @@
         '<p class="small">' + esc(t('next_einv_d')) + '</p>') +
       '</div>');
 
-    // email moment: second visit with data, or when the limit is in sight
-    if ((state.visits || 0) >= 2 || r.status === 'near' || r.status === 'close' || r.status === 'lost') {
-      html.push('<p class="small mail"><a href="' + esc(link(t('contact_href'))) + '">' + esc(t('mail')) + ' &rarr;</a> ' + esc(t('mail_d')) + '</p>');
-    }
+    // email moment: from the second visit with data (never at the first result)
+    var offer = (state.visits || 0) >= 2 && window.HMSKMoment;
+    if (offer) html.push('<div id="emBox"></div>');
 
     html.push('<div class="tools"><button type="button" class="linkish" id="printBtn">' + esc(t('print')) + '</button></div>');
     body.innerHTML = html.join('');
     $$('[data-copy]', body).forEach(function (b) { b.addEventListener('click', copy); });
     $('#printBtn').addEventListener('click', function () { window.print(); });
+    if (offer) emailMoment();
+  }
+
+  // A monthly email to enter last month's turnover; the warning before the limit then comes from this page.
+  // Only the email address and the first date (the 1st of next month) are sent, never the figures.
+  function emailMoment() {
+    var now = new Date(), first = new Date(Date.UTC(now.getFullYear(), now.getMonth() + 1, 1)).toISOString().slice(0, 10);
+    HMSKMoment.render($('#emBox'), {
+      lang: lang, action: link('/email/subscribe.php'), privacy: link(t('privacy_href')) + '#newsletter',
+      source: '/apps/kleinunternehmer-check/', topic: 'kleinunternehmer-monthly', topicName: t('mail_topic'), consent: 'own',
+      title: t('mail'), intro: t('mail_d'),
+      items: [{ date: first, label: t('mail_label'), kind: 'deadline',
+        text: t('mail_item', { d: new Intl.DateTimeFormat(t('locale'), { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(first + 'T00:00:00Z')) }) }],
+    });
   }
 
   function fmtPct(p) { return new Intl.NumberFormat(t('locale'), { maximumFractionDigits: 1 }).format(p); }
